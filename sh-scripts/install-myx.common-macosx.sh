@@ -2,7 +2,7 @@
 
 # There are two ways:
 #
-# 1) fetch https://raw.githubusercontent.com/myx/os-myx.common-macosx/master/sh-scripts/install-myx.common-macosx.sh -o - | sh -e
+# 1) curl -L https://raw.githubusercontent.com/myx/os-myx.common-macosx/master/sh-scripts/install-myx.common-macosx.sh --silent | sh -e
 # or
 # 2) To execute this as a script, run:
 #		sh -c 'eval "`cat`"'
@@ -16,11 +16,13 @@ echo "myx.common MacOSX Installer started..." >&2
 #
 test `id -u` != 0 && echo 'ERROR: Must be root!' && exit 1
 
-curl https://github.com/myx/os-myx.common/archive/master.zip --silent | \
-		tar zxvf - --cd "/usr/local/" --include "*/host/tarball/*" --strip-components 3
-		
-curl https://github.com/myx/os-myx.common-macosx/archive/master.zip --silent | \
-		tar zxvf - --cd "/usr/local/" --include "*/host/tarball/*" --strip-components 3
+
+curl -L https://github.com/myx/os-myx.common/archive/master.zip --silent | \
+		tar -xzvf - --cd "/usr/local/" --include "*/host/tarball/*" --strip-components 3
+
+curl -L https://github.com/myx/os-myx.common-macosx/archive/master.zip --silent | \
+		tar -xzvf - --cd "/usr/local/" --include "*/host/tarball/*" --strip-components 3
+
 
 chown root:wheel "/usr/local/bin/myx.common"
 chmod 755 "/usr/local/bin/myx.common"
