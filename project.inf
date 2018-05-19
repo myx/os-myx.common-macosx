@@ -1,0 +1,9 @@
+Name: os-myx.common-macosx
+Requires: 
+Augments: 
+Suggests: 
+Declares: 
+Provides:	os.any \
+			os.unix \
+			os.macosx \
+			build.macosx-installer:build-tool
