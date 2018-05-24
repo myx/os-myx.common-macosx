@@ -18,10 +18,10 @@ test `id -u` != 0 && echo 'ERROR: Must be root!' && exit 1
 
 
 curl -L https://github.com/myx/os-myx.common/archive/master.zip --silent | \
-		tar -xzvf - --cd "/usr/local/" --include "*/host/tarball/*" --strip-components 3
+		tar -xzvf - -C "/usr/local/" --include "*/host/tarball/*" --strip-components 3
 
 curl -L https://github.com/myx/os-myx.common-macosx/archive/master.zip --silent | \
-		tar -xzvf - --cd "/usr/local/" --include "*/host/tarball/*" --strip-components 3
+		tar -xzvf - -C "/usr/local/" --include "*/host/tarball/*" --strip-components 3
 
 
 chown root:wheel "/usr/local/bin/myx.common"
