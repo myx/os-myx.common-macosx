@@ -17,10 +17,10 @@ echo "myx.common MacOSX Installer started..." >&2
 test `id -u` != 0 && echo 'ERROR: Must be root!' && exit 1
 
 
-curl -L https://github.com/myx/os-myx.common/archive/master.zip --silent | \
+curl -L https://github.com/myx/os-myx.common/archive/master.tar.gz --silent | \
 		tar -xzvf - -C "/usr/local/" --include "*/host/tarball/*" --strip-components 3
 
-curl -L https://github.com/myx/os-myx.common-macosx/archive/master.zip --silent | \
+curl -L https://github.com/myx/os-myx.common-macosx/archive/master.tar.gz --silent | \
 		tar -xzvf - -C "/usr/local/" --include "*/host/tarball/*" --strip-components 3
 
 
