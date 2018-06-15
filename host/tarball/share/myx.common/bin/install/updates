@@ -17,7 +17,6 @@ InstallUpdates(){
 	#   UserRequireRoot
 	# we do:
 	test `id -u` = 0 || { echo "$0: Must be run under root user!" ; exit 1 ; }
-	which -s apt-get || { echo "$0: apt-get is required!" ; exit 1 ; }
 	
 	TryFetchStdout https://raw.githubusercontent.com/myx/os-myx.common/master/sh-scripts/install-myx.common.sh | sh -e
 
