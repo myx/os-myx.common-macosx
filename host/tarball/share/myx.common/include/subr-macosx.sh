@@ -16,4 +16,3 @@ UmanBaseHomeDirectory(){
 UmanRootHomeDirectory(){
 	echo "/var/root"
 }
-
