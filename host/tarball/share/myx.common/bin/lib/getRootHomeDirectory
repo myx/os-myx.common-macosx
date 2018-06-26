@@ -1,0 +1,20 @@
+#!/bin/sh
+
+##### !!! THIS SCRIPT MUST BE OVERRIDEN IN OS-DEPENDENT IMPLEMENTATION !!! #####
+
+GetRootHomeDirectory(){
+	echo "/var/root"
+}
+
+
+case "$0" in
+	*/myx.common/bin/lib/getRootHomeDirectory) 
+		if [ "$1" = "--help" ] ; then
+			echo "Syntax: myx.common lib/getRootHomeDirectory" >&2
+			exit 1
+		fi
+		# set -e
+		# GetRootHomeDirectory "$@"
+		echo "/var/root"
+	;;
+esac
