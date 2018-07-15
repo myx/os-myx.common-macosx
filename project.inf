@@ -3,7 +3,7 @@ Requires: os-myx.common
 Provides: \
 	os.any os.unix os.macosx myx.common/os-myx.common-macosx \
 	macosx-installer.sh:build.freebsd-installer \
-	build-prepare:project-source.tgz \
+	source-process:project-source.tgz \
 	deploy-export:project-source.tgz:github.com/myx/os-myx.common-macosx/archive/master.tar.gz \
 	deploy-export:sh-scripts/install-myx.common-macosx.sh:raw.githubusercontent.com/myx/os-myx.common-macosx/master/sh-scripts/install-myx.common-macosx.sh \
 
