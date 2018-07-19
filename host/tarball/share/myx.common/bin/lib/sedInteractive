@@ -2,9 +2,12 @@
 
 ## NOTE: because of macosx not supporting the '-u' option
 
-SedInteractive(){
-	sed "$@"
-}
+export SedInteractive='sed'
+alias SedInteractive='sed'
+
+# SedInteractive(){
+# 	sed "$@"
+# }
 
 case "$0" in
 	*/myx.common/bin/lib/sedInteractive) 
@@ -13,6 +16,6 @@ case "$0" in
 			exit 1
 		fi
 		set -e
-		SedInteractive "$@"
+		$SedInteractive "$@"
 	;;
 esac
