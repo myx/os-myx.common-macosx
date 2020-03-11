@@ -2,7 +2,7 @@
 
 ##### !!! THIS SCRIPT MUST BE OVERRIDEN IN OS-DEPENDENT IMPLEMENTATION !!! #####
 
-GetCommonScreenRc(){
+OsGetCommonScreenRc(){
 	echo /usr/local/etc/screenrc
 }
 
@@ -14,7 +14,7 @@ case "$0" in
 			exit 1
 		fi
 		# set -e
-		# GetCommonScreenRc "$@"
+		# OsGetCommonScreenRc "$@"
 		echo /usr/local/etc/screenrc
 	;;
 esac

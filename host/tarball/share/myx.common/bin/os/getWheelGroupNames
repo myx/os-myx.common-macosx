@@ -2,7 +2,7 @@
 
 ##### !!! THIS SCRIPT MUST BE OVERRIDEN IN OS-DEPENDENT IMPLEMENTATION !!! #####
 
-GetWheelGroupNames(){
+OsGetWheelGroupNames(){
 	echo "wheel"
 }
 
@@ -14,7 +14,7 @@ case "$0" in
 			exit 1
 		fi
 		# set -e
-		# GetWheelGroupNames "$@"
+		# OsGetWheelGroupNames "$@"
 		echo "wheel"
 	;;
 esac

@@ -1,8 +1,23 @@
 #!/bin/sh
 
-if [ `id -u` = 0 ] ; then
-	killall -HUP mDNSResponder
-	killall mDNSResponderHelper
-fi
+##### !!! THIS SCRIPT MUST BE OVERRIDEN IN OS-DEPENDENT IMPLEMENTATION !!! #####
 
-dscacheutil -flushcache
+ResetDnsCache(){
+	if [ `id -u` = 0 ] ; then
+		killall -HUP mDNSResponder
+		killall mDNSResponderHelper
+	fi
+	
+	dscacheutil -flushcache
+}
+
+case "$0" in
+	*/myx.common/bin/reset/dnsCache) 
+		if [ "$1" = "--help" ] ; then
+			echo "Syntax: myx.common reset/dnsCache" >&2
+			exit 1
+		fi
+		set -e
+		ResetDnsCache "$@"
+	;;
+esac
