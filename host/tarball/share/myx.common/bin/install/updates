@@ -19,11 +19,10 @@ InstallUpdates(){
 	
 	TryFetchStdout https://raw.githubusercontent.com/myx/os-myx.common/master/sh-scripts/install-myx.common.sh | sh -e
 
-	# /usr/sbin/softwareupdate --background
-	
-	if which -s brew ; then
-		brew update
-	fi
+	/usr/sbin/softwareupdate --background --force
+	/usr/sbin/softwareupdate --install --all
+
+	which -s brew && brew update
 	
 	open "/Applications/App Store.app"	 
 }
