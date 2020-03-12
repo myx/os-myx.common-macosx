@@ -2,7 +2,7 @@
 
 set -e
 
-[ ! -z `which java` ] && echo "java is already installed, version: " && echo "`java -Xinternalversion || java -version`" && exit 0 
+which -s java && echo "java is already installed, version: " && echo "`java -Xinternalversion || java -version`" && exit 0 
 
 ##### !!! THIS SCRIPT SHOULD BE OVERRIDEN IN OS-DEPENDENT IMPLEMENTATION !!! #####
 echo "myx.common install/java: abstract method"
