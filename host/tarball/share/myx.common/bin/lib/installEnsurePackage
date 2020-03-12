@@ -15,8 +15,10 @@ InstallEnsurePackageTransformPackageName(){
 }
 
 InstallEnsurePackage(){
-	# not on mac/brew: UserRequireRoot "InstallEnsurePackage"
+	UserRequireRoot "InstallEnsurePackage"
 	which -s brew || myx.common install/brew
+
+	[ -z "$SUDO_USER" ] && echo "The SUDO_USER env variable is required!" && exit 1
 
 	local NAME="$1"
 	[ -z "$NAME" ] && echo "The utility name is required!" && exit 1
@@ -31,7 +33,7 @@ InstallEnsurePackage(){
 
 	[ -z "$LIST" ] \
 		&& echo "all packages installed." >&2 \
-		|| brew install $LIST
+		|| sudo -u $SUDO_USER -H -s brew install $LIST
 }
 
 case "$0" in
