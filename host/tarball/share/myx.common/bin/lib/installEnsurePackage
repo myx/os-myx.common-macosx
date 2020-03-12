@@ -33,7 +33,11 @@ InstallEnsurePackage(){
 
 	[ -z "$LIST" ] \
 		&& echo "all packages installed." >&2 \
-		|| sudo -u $SUDO_USER -H -s brew install $LIST
+		|| ( \
+			chown -R $SUDO_USER /usr/local/bin /usr/local/share ; \
+			chmod u+w /usr/local/bin /usr/local/share ; \
+			sudo -u $SUDO_USER -H -s brew install $LIST ; \
+		)
 }
 
 case "$0" in
