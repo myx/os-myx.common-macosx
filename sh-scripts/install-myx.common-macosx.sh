@@ -14,7 +14,7 @@ echo "myx.common MacOSX Installer started..." >&2
 #
 # Check user
 #
-test `id -u` != 0 && echo 'ERROR: Must be root!' && exit 1
+test `id -u` != 0 && echo 'ERROR: Must be root!' >&2 && exit 1
 
 
 curl -L https://github.com/myx/os-myx.common/archive/master.tar.gz --silent | \

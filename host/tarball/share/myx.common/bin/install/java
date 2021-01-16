@@ -5,5 +5,5 @@ set -e
 which -s java && echo "java is already installed, version: " && echo "`java -Xinternalversion || java -version`" && exit 0 
 
 ##### !!! THIS SCRIPT SHOULD BE OVERRIDEN IN OS-DEPENDENT IMPLEMENTATION !!! #####
-echo "myx.common install/java: abstract method"
+echo "ERROR: myx.common install/java: abstract method" >&2
 exit 1 
