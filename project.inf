@@ -1,13 +1,11 @@
 Name: os-myx.common-macosx
 Requires: os-myx.common
 Provides: \
-	os.any os.macosx os-myx.common-freebsd myx.common/os-myx.common-macosx \
-	macosx-installer.sh:build.freebsd-installer \
-	source-process:project-source.tgz \
-	deploy-export:project-source.tgz:github.com/myx/os-myx.common-macosx/archive/master.tar.gz \
+	os.any os.macosx os-myx.common-macosx myx/os-myx.common-macosx myx.common/os-myx.common-macosx \
 	deploy-export:sh-scripts/install-myx.common-macosx.sh:raw.githubusercontent.com/myx/os-myx.common-macosx/master/sh-scripts/install-myx.common-macosx.sh \
 
 Keywords: \
+	myx.common \
 	macosx \
 
 Augments: 
